@@ -87,11 +87,15 @@ h3 {
     font-size: 0.95rem;
     color: #e5e7eb;
     margin-bottom: 0.75rem;
+    text-align: justify;
+  text-justify: inter-word;
 }
 
 .intro-sub {
     font-size: 0.9rem;
     color: #9ca3af;
+    text-align: justify;
+  text-justify: inter-word;
 }
 
 .mt {
