@@ -88,14 +88,14 @@ h3 {
     color: #e5e7eb;
     margin-bottom: 0.75rem;
     text-align: justify;
-  text-justify: inter-word;
+    text-justify: inter-word;
 }
 
 .intro-sub {
     font-size: 0.9rem;
     color: #9ca3af;
     text-align: justify;
-  text-justify: inter-word;
+    text-justify: inter-word;
 }
 
 .mt {
@@ -139,6 +139,19 @@ h3 {
     color: #9ca3af;
     display: block;
     margin-bottom: 0.3rem;
+}
+
+.card-button {
+    font-size: 1.25rem;
+    color: #244c91;
+    display: block;
+    text-align: right;
+}
+
+.card-button::after {
+    content: ' ›';
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 ul {
