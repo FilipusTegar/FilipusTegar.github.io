@@ -121,7 +121,26 @@
             Used BAS on BTP as the main environment for development, configuration, and deployment.
           </li>
         </ul>
-
+        <div class="card-lessons">
+          <h4>Lessons Learned & Improvements</h4>
+          <ul>
+            <li>
+              Refined the data model for deduction ratio step to differ one ratio to another (Propose simple yet
+              efective key based on my tax knowledge).
+            </li>
+            <li>
+              Proposing multiple tab views implementation rather than selecting using dropdown filter selection.
+            </li>
+            <li>
+              Improved the drill-down design to keep filters consistent when jumping from header view to document-level
+              details to create faster validation.
+            </li>
+            <li>
+              Tuned filter, restrictions, aggregations and annotations to keep response time acceptable on larger
+              datasets (harder when we need to keep rules and performance in tact 🥲).
+            </li>
+          </ul>
+        </div>
         <a href="SD_0001_Project.html" class="card-button">View project</a>
       </div>
 
@@ -130,24 +149,44 @@
       <div class="card">
         <div class="card-header-line">
           <h3>Invetory Management Report</h3>
-          <span>S/4HANA Public Cloud • ABAP OOP • Annotations • Fiori Elements</span>
+          <span>S/4HANA Public Cloud • RAP • Custom Entities (LR - OP) • Fiori Elements</span>
         </div>
-        <small>Business context: investigate specific records quickly by drilling from a high-level list into detailed
+        <small>Business context: investigate inventory materials level on all storage location quickly and can be
+          drilled down from a high-level list into detailed
           conditions.</small>
         <ul>
           <li>Configured an advanced Object Page that automatically applies filter conditions based on the selected List
             Report record.</li>
           <li>Used UI annotations to control facets, sections, and field visibility for different analysis needs.</li>
-          <li>Implemented logic to sync list selection, detail filters, and related entity data to support faster root
-            cause analysis.</li>
+          <li>Implemented logic to sync list selection, detail filters, and related entity data to support faster
+            inventory analysis.</li>
         </ul>
+        <div class="card-lessons">
+          <h4>Lessons Learned & Improvements</h4>
+          <ul>
+            <li>
+              Introduced an Object Page navigation and validation flow that was not in the original functional
+              specification, so users can jump directly from summary lines into detailed checks.
+            </li>
+            <li>
+              Separated key validation data into Object Page tabs for each material and storage location, covering price
+              (standard and actual), opening, inbound, outbound, closing, and transit quantities and amounts.
+            </li>
+            <li>
+              Optimized CDS queries and associations to include edge cases such as transit and unusual records across
+              storage locations, while keeping performance stable by validating each change with SQL Trace.
+            </li>
+          </ul>
+        </div>
+        <a href="MM_0001_Project.html" class="card-button">View project</a>
       </div>
 
       <!-- Project 3 -->
       <div class="card">
         <div class="card-header-line">
-          <h3>Support & Validation Reports</h3>
-          <span>List Report • Custom Actions</span>
+          <h3>Inventory Write-Down Provision Report and Batch Input</h3>
+          <span>S/4HANA Public Cloud • Custom Actions & RAP • Custom Entities (LR - OP) • Fiori Elements • API Call
+          </span>
         </div>
         <small>Business context: validate imported or staged data and support operational follow-up.</small>
         <ul>
@@ -155,6 +194,24 @@
           <li>Added custom actions for recalculation, status updates, and quick corrections.</li>
           <li>Highlighted data issues with calculated fields and status flags to guide business users.</li>
         </ul>
+        <div class="card-lessons">
+          <h4>Lessons Learned & Improvements</h4>
+          <ul>
+            <li>
+              Improved separation between UI logic (JS and fragments) and RAP business logic to make
+              the solution easier to maintain and extend.
+            </li>
+            <li>
+              Enhanced validation and error handling for file upload and posting steps, so business
+              users get clearer feedback and can fix data issues faster.
+            </li>
+            <li>
+              Standardized the Excel template structure and naming to simplify future onboarding of
+              new company codes or materials.
+            </li>
+          </ul>
+        </div>
+        <a href="FICO_0001_Project.html" class="card-button">View project</a>
       </div>
     </section>
 

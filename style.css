@@ -10,7 +10,20 @@ body {
     color: #e5e7eb;
     line-height: 1.6;
 }
-
+/* Overlay gradient seluruh layar */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  pointer-events: none;        /* jangan ganggu klik */
+  z-index: 999;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.2) 75%,
+    rgba(0, 0, 0, 0.877) 100%
+  );
+}
 a {
     color: #38bdf8;
     text-decoration: none;
@@ -143,7 +156,7 @@ h3 {
 
 .card-button {
     font-size: 1.25rem;
-    color: #244c91;
+    color: #849ecc;
     display: block;
     text-align: right;
 }
@@ -153,7 +166,30 @@ h3 {
     font-size: 1.25rem;
     font-weight: bold;
 }
+/* efek hover: garis bawah + ganti warna */
+.card-button:hover {
+    color: #a8905f;            /* warna saat hover, silakan ganti kalau mau */
+    text-decoration: underline;
+}
 
+/* panah ikut ganti warna juga */
+.card-button:hover::after {
+    color: inherit;
+}
+.card-lessons {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.card-lessons h4 {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.card-lessons ul {
+  margin-left: 1rem;
+}
 ul {
     margin-left: 1rem;
     margin-top: 0.25rem;
