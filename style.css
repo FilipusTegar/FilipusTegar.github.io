@@ -24,6 +24,19 @@ body::before {
     rgba(0, 0, 0, 0.877) 100%
   );
 }
+/* Animasi slide dari bawah */
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Saat sudah kelihatan di layar */
+.slide-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 a {
     color: #38bdf8;
     text-decoration: none;
