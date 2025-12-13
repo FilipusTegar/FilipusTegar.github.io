@@ -24,4 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   slideElements.forEach((el) => observer.observe(el));
+  
+    // Support animasi untuk konten di dalam <details> saat dibuka
+  document.querySelectorAll("details").forEach((d) => {
+    d.addEventListener("toggle", () => {
+      if (!d.open) return;
+
+      d.querySelectorAll(".slide-up:not(.show)").forEach((el) => {
+        observer.observe(el);
+      });
+    });
+  });
+
 });

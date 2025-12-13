@@ -1,0 +1,159 @@
+:root{
+  --bg: #0f172a;
+  --panel: #020617;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --link: #38bdf8;
+}
+
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.topbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 56px;
+  z-index: 80;
+  background: rgba(2,6,23,0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+}
+
+.topbar-inner{
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topbar-title{
+  font-weight: 650;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-sub{
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.deck{
+  padding-top: 56px; /* biar konten tidak ketutup topbar */
+}
+
+.slide{
+  scroll-margin-top: 56px; /* kalau ada scroll/anchor */
+}
+
+.deck{
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 90px;
+}
+
+.slide{
+  scroll-snap-align: start;
+  min-height: 100vh;
+  padding: 64px 18px 110px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrap{ width: 100%; max-width: 980px; }
+
+.card{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.kicker{ color: var(--muted); font-size: 0.95rem; margin-bottom: 8px; }
+.muted{ color: var(--muted); }
+
+h1{ font-size: 2rem; margin-bottom: 10px; line-height: 1.2; }
+h2{ font-size: 1.35rem; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+a{ color: var(--link); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+/* Bottom nav */
+.bottom-nav{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(2,6,23,0.92);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+}
+
+.nav-inner{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.btn{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.btn.active{
+  border-color: rgba(56,189,248,0.9);
+}
+
+.counter{
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+/* Biar card di setiap slide bisa scroll */
+.slide{
+  align-items: flex-start;   /* mulai dari atas */
+}
+.slide-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 12px;
+}
+
+.slide .card{
+  max-height: calc(100vh - 64px - 110px); /* 64 top padding + 110 bottom padding slide */
+  overflow-y: auto;
+  padding-right: 14px;       /* biar teks tidak ketabrak scrollbar */
+}
+
+/* Opsional: scroll lebih enak di mobile */
+.slide .card{
+  -webkit-overflow-scrolling: touch;
+}
