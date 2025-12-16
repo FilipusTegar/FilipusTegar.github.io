@@ -18,66 +18,222 @@
     </div>
 
     <main class="deck" id="deck">
-        <section class="slide" id="s1" data-title="Title">
+        <section class="slide" id="s1" data-title="Problem">
             <div class="wrap">
                 <div class="card">
-                    <div class="kicker">SD_0001 • SAP Sales & Delivery Report</div>
-                    <h1>Sales Deduction and Commission Report</h1>
-                    <p class="muted">Business context: helps a retail chain calculate sales deduction/commission amounts
-                        per contract and see total rebates and commissions by month, quarter, and year in one place.</p>
-                    <img class="slide-img" src="SD_0001_Front.png" alt="SD_0001 Front Page">
-
+                    <div class="kicker">SD_0001 • SAP Sales & Distribution Report</div>
+                    <h1>Business Context</h1>
+                    <p class="muted"><strong>Helps a retail chain calculate sales deduction and commission amounts per
+                            contract
+                            and
+                            see total rebates and commissions by month, quarter, and year in one place.</strong></p>
+                    <ul>
+                        <li><strong>Primary users:</strong> Sales, SD Operations, Finance</li>
+                        <li><strong>Core output:</strong> contract-based totals + period summaries</li>
+                        <li><strong>Decision supported:</strong> settlement accuracy, incentive governance, contract
+                            review</li>
+                    </ul>
+                    <img class="slide-img" src="SD_0001_Front.gif" alt="SD_0001 Front Page">
                 </div>
             </div>
         </section>
 
-        <section class="slide" id="s2" data-title="Problem & Goal">
+        <!-- 3) PAIN RELIEVERS -->
+        <section class="slide" id="s3" data-title="Pain Relievers">
             <div class="wrap">
                 <div class="card">
-                    <h2>Problem & Goal</h2>
-                    <!-- isi -->
+                    <h2>Pain Relievers</h2>
+
+                    <ul>
+                        <li><strong>Reduces manual reconciliation</strong> by removing spreadsheet rollups across teams.
+                        </li>
+                        <li><strong>Speeds up dispute handling</strong> with drill-down clarity per contract and period.
+                        </li>
+                        <li><strong>Prevents inconsistent numbers</strong> by enforcing one calculation logic and
+                            dataset.</li>
+                        <li><strong>Accelerates closing</strong> with ready monthly, quarterly, and yearly totals.</li>
+                        <li><strong>Improves audit readiness</strong> with consistent totals and traceable breakdowns.
+                        </li>
+                    </ul>
+
+                    <p class="muted">Hook message: fewer disputes, faster close, less manual work.</p>
                 </div>
             </div>
         </section>
-        <section class="slide" id="s3" data-title="Scope">
+        <section class="slide" id="s4" data-title="Gain Creators">
             <div class="wrap">
                 <div class="card">
-                    <h2>Scope</h2>
-                    <!-- isi -->
+                    <h2>Gain Creators</h2>
+
+                    <ul>
+                        <li><strong>Clear incentive spend visibility</strong> across month, quarter, and year.</li>
+                        <li><strong>Faster business decisions</strong> for contract evaluation and incentive tuning.
+                        </li>
+                        <li><strong>Higher trust</strong> across Sales, SD Ops, and Finance with a single source of
+                            truth.</li>
+                        <li><strong>Scalable reporting</strong> for more contracts and periods without extra effort.
+                        </li>
+                        <li><strong>Better governance</strong> with stronger evidence for approvals and exceptions.</li>
+                    </ul>
+
+                    <p class="muted">Outcome: better control of rebates and commissions with less friction.</p>
                 </div>
             </div>
         </section>
-<section class="slide" id="s3" data-title="Modules">
+        <!-- 1) USER UI/UX WORKFLOW -->
+        <section class="slide" id="s5" data-title="UI/UX Workflow">
             <div class="wrap">
                 <div class="card">
-                    <h2>Modules</h2>
-                    <!-- isi --module CDS >
+                    <h2>User UI/UX Workflow</h2>
+                    <p class="muted">How business users consume the report end to end.</p>
+
+                    <ul>
+                        <li><strong>Open app</strong> from Launchpad using a role-based tile.</li>
+                        <li><strong>Set filters</strong> such as Contract, Period, Sales Org, Customer.</li>
+                        <li><strong>Review period totals</strong> for Month, Quarter, Year.</li>
+                        <li><strong>Drill down</strong> to contract-level lines.</li>
+                        <li><strong>Validate anomalies</strong> using sorting and grouping.</li>
+                        <li><strong>Export</strong> for settlement review and audit evidence.</li>
+                    </ul>
+
+                    <div class="diagram">
+                        <img class="diagram-img" src="charts/ui-workflow.png"
+                            alt="UI workflow: Launchpad > Filter Bar > Totals View > Drill Down > Export"
+                            loading="lazy">
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- lanjutkan sampai s13 -->
+
+        <!-- 2) IAM + BUSINESS CATALOG + BUSINESS ROLE (Chart) -->
+        <section class="slide" id="s6" data-title="IAM and Roles">
+            <div class="wrap">
+                <div class="card">
+                    <h2>IAM, Business Catalog, Business Role</h2>
+                    <p class="muted">How access control drives tiles, navigation, and data visibility.</p>
+
+                    <ul>
+                        <li><strong>Business Role</strong> groups catalogs and authorizations for a user group.</li>
+                        <li><strong>Business Catalog</strong> provides tile and target mapping.</li>
+                        <li><strong>Authorizations</strong> restrict data by org rules and ownership.</li>
+                    </ul>
+
+                    <div class="diagram">
+                        <img class="diagram-img" src="charts/iam-role-catalog.png"
+                            alt="IAM diagram: User > Business Role > Catalog and Authorizations > Fiori App and OData"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3) SYSTEM -> BTP -> BAS -> FIORI EXTENSION (Chart) -->
+        <section class="slide" id="s7" data-title="System to BTP Flow">
+            <div class="wrap">
+                <div class="card">
+                    <h2>System to BTP to BAS to Fiori Extension</h2>
+                    <p class="muted">How you build, extend, and deliver the app.</p>
+
+                    <ul>
+                        <li><strong>S/4HANA</strong> exposes CDS and OData services.</li>
+                        <li><strong>BTP</strong> provides connectivity and extension runtime.</li>
+                        <li><strong>BAS</strong> provides the UI5 development workspace.</li>
+                        <li><strong>Fiori Extension</strong> adds custom UI without changing core.</li>
+                    </ul>
+
+                    <div class="diagram">
+                        <img class="diagram-img" src="charts/system-btp-bas-extension.png"
+                            alt="Flow: S/4HANA > SAP BTP > BAS > Fiori Extension" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4) FIORI NAV + MANIFEST + ANNOTATION + EXTENSION (Chart) -->
+        <section class="slide" id="s8" data-title="Fiori App Wiring">
+            <div class="wrap">
+                <div class="card">
+                    <h2>Fiori Navigation, Manifest, Annotations, Extensions</h2>
+                    <p class="muted">How the tile opens the app and how the UI renders.</p>
+
+                    <ul>
+                        <li><strong>Navigation</strong> uses intent-based routing from tile to app.</li>
+                        <li><strong>manifest.json</strong> defines routing and data sources.</li>
+                        <li><strong>Annotations</strong> generate List Report and Object Page UI.</li>
+                        <li><strong>Extensions</strong> add custom actions, fragments, and logic.</li>
+                    </ul>
+
+                    <div class="diagram">
+                        <img class="diagram-img" src="charts/fiori-wiring.png"
+                            alt="Wiring: Tile > Intent > Manifest and Annotations > Fiori UI; Extensions attach to UI runtime"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5) DATA MODELLING + CDS LAYERS (Chart) -->
+        <section class="slide" id="s9" data-title="Data Modelling">
+            <div class="wrap">
+                <div class="card">
+                    <h2>Data Modelling and CDS Design</h2>
+                    <p class="muted">How you support both aggregation and drill down.</p>
+
+                    <ul>
+                        <li><strong>Interface CDS</strong> joins core SD entities and applies base filters.</li>
+                        <li><strong>Aggregation CDS</strong> supports Month, Quarter, Year summaries.</li>
+                        <li><strong>Detail CDS</strong> supports contract-line drill down.</li>
+                        <li><strong>Consumption CDS</strong> exposes fields and UI semantics.</li>
+                    </ul>
+
+                    <div class="diagram">
+                        <img class="diagram-img" src="charts/cds-layering.png"
+                            alt="CDS layering: Interface > Aggregation and Detail > Consumption" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6) CUSTOM ENTITY + OBJECTQUERY IMPLEMENTATION (Chart) -->
+        <section class="slide" id="s10" data-title="Custom Entity Query">
+            <div class="wrap">
+                <div class="card">
+                    <h2>Custom Entity and ObjectQuery Implementation</h2>
+                    <p class="muted">How you serve non-standard queries and complex aggregation.</p>
+
+                    <ul>
+                        <li><strong>Custom Entity</strong> defines the UI-facing contract of fields.</li>
+                        <li><strong>Query Provider</strong> maps filter, sort, and paging to query logic.</li>
+                        <li><strong>ObjectQuery</strong> handles grouping and calculated values.</li>
+                        <li><strong>Response shaping</strong> returns totals and drill-down keys.</li>
+                    </ul>
+
+                    <div class="diagram">
+                        <img class="diagram-img" src="charts/custom-entity-flow.png"
+                            alt="Flow: UI request > OData custom entity > query provider and object query > response"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- NAVIGATION (kamu yang atur) -->
     <div class="bottom-nav" role="navigation" aria-label="Slide Navigation">
         <div class="nav-inner">
 
-            <!-- kamu bisa ganti tombol/anchor sesukamu -->
-            <a class="btn" href="#s1">Title</a>
-            <a class="btn" href="#s2">Problem</a>
-            <a class="btn" href="#s3">Scope</a>
-            <a class="btn" href="#s4">Modules</a>
-            <a class="btn" href="#s5">Process</a>
-            <a class="btn" href="#s6">Features</a>
-            <a class="btn" href="#s7">Data</a>
-            <a class="btn" href="#s8">Rules</a>
-            <a class="btn" href="#s9">Security</a>
-            <a class="btn" href="#s10">Performance</a>
-            <a class="btn" href="#s11">Preview</a>
-            <a class="btn" href="#s12">Demo</a>
-            <a class="btn" href="#s13">Lessons</a>
+            <a class="btn" href="#s1">Context</a>
+            <a class="btn" href="#s3">Pain</a>
+            <a class="btn" href="#s4">Gains</a>
 
-            <span class="counter" id="counter">1 / 13</span>
+            <a class="btn" href="#s5">UI/UX</a>
+            <a class="btn" href="#s6">IAM</a>
+            <a class="btn" href="#s7">BTP Flow</a>
+            <a class="btn" href="#s8">Fiori Wiring</a>
+            <a class="btn" href="#s9">CDS Model</a>
+            <a class="btn" href="#s10">Custom Query</a>
+
+            <span class="counter" id="counter">1 / 10</span>
         </div>
     </div>
 

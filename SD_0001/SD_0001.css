@@ -3,7 +3,7 @@
   --panel: #020617;
   --border: #1f2937;
   --text: #e5e7eb;
-  --muted: #9ca3af;
+  --muted: #949598;
   --link: #38bdf8;
 }
 
@@ -79,12 +79,12 @@ body{
 
 .wrap{ width: 100%; max-width: 980px; }
 
-.card{
+/* .card{
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 22px;
-}
+} */
 
 .kicker{ color: var(--muted); font-size: 0.95rem; margin-bottom: 8px; }
 .muted{ color: var(--muted); }
